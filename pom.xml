@@ -35,6 +35,24 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<charset>UTF-8</charset>
+					<doctitle>${project.name} ${project.version}</doctitle>
+					<windowtitle>${project.name} ${project.version} Javadoc</windowtitle>
+					<footer></footer>
+					<header><![CDATA[Fork this project on <a href="https://github.com/flowlo/gamboo">GitHub</a>]]></header>
+					<show>private</show>
+					<isOffline>false</isOffline>
+					<links>
+						<link>http://docs.oracle.com/javase/7/docs/api/</link>
+						<link>http://jcommander.org/apidocs/</link>
+					</links>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -44,4 +62,8 @@
 			<version>1.30</version>
 		</dependency>
 	</dependencies>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 </project>

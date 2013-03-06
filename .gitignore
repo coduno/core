@@ -8,8 +8,5 @@
 # Temporary Files
 *~
 
-# JavaDoc (generate it if needed)
-doc
-
 # Maven output
 target
