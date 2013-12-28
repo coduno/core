@@ -10,3 +10,7 @@
 
 # Maven output
 target
+
+# Gradle output
+build
+.gradle

@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '0.0.1'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'com.beust:jcommander:1.30+'
+}
+
+javadoc {
+	source = sourceSets.main.allJava
+	appName = 'gamboo'
+	developerEmail = 'lorenz.leutgeb@gmail.com'
+	project.configure(options) {
+		memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
+		charSet = "UTF-8"
+		docTitle = "$appName"
+		windowTitle = "$appName"
+		header = 'Fork this project on <a href="https://github.com/flowlo/gamboo">GitHub</a>!'
+		bottom = 'Contact via <a href="https://github.com/flowlo/gamboo/issues">GitHub Issue Tracker</a> for feedback.'
+		author = "true"
+		use = "true"
+		links('http://download.java.net/jdk8/docs/api/', 'http://jcommander.org/apidocs/')
+	}
+}
+
+jar {
+	manifest {
+		attributes('Main-Class': 'gamboo.Gamboo', 'Application-Name': '$appName')
+	}
+}
