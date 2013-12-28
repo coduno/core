@@ -11,6 +11,10 @@ dependencies {
 	compile 'com.beust:jcommander:1.30+'
 }
 
+compileJava {
+	options.compilerArgs << '-Xlint'
+}
+
 javadoc {
 	source = sourceSets.main.allJava
 	ext.appName = 'gamboo'
