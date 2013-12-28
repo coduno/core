@@ -13,8 +13,8 @@ dependencies {
 
 javadoc {
 	source = sourceSets.main.allJava
-	appName = 'gamboo'
-	developerEmail = 'lorenz.leutgeb@gmail.com'
+	ext.appName = 'gamboo'
+	ext.developerEmail = 'lorenz.leutgeb@gmail.com'
 	project.configure(options) {
 		memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
 		charSet = "UTF-8"
