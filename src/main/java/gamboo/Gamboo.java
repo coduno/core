@@ -307,7 +307,7 @@ public class Gamboo {
 	
 	/**
 	 * Basically the same as {@link #run(String, Runnable, long, Thread.UncaughtExceptionHandler)}
-	 * but does install a standard {@link java.lang.thread.Thread.UncaughtExceptionHandler}.
+	 * but does install a standard {@link java.lang.Thread.UncaughtExceptionHandler}.
 	 *
 	 * @see #run(String, Runnable, long, Thread.UncaughtExceptionHandler)
 	 */
@@ -335,7 +335,7 @@ public class Gamboo {
 	 *                is allowed to run for.
 	 * @return the time the {@link java.lang.Thread} actually executed in
 	 *         nanosecond precision, but not necessarily nanosecond accuracy.
-	 * @throws GambooTimeOutException if the thread attempted to execute
+	 * @throws GambooTimeoutException if the thread attempted to execute
 	 *                                longer than <code>timeout</code>
 	 *                                milliseconds.
 	 * @see java.lang.management.ThreadMXBean#getCurrentThreadCpuTime
