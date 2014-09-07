@@ -121,7 +121,7 @@ public class Gamboo {
 
 	static {
 		try {
-			classes = new URL("file:///home/lorenz/Dropbox/gamboo/java/players/");
+			classes = new URL("file:///home/lorenz/workspace/coduno/players/");
 		}
 		catch (MalformedURLException e) {
 			System.err.println("Static error");
@@ -219,7 +219,7 @@ public class Gamboo {
 					if (logfile.lastModified() < new File(classes.getPath() + item.toString() + ".jar").lastModified())
 						simulate = true;
 			
-				ServiceLoader<Solution> service = ServiceLoader.load(face, new GambooClassLoader(new URL("jar:" + classes.toString() + item.toString() + ".jar!/"), loader));
+				ServiceLoader<Solution> service = ServiceLoader.load(face, new GambooClassLoader(new URL("jar:" + classes.toString() + item.toString() + "/tictactoe.jar!/"), loader));
 		
 				if (!service.iterator().hasNext()) {
 					System.err.println("Unable to load Solution for player " + item + ". Please check " + classes + "/" + item + ".jar!/META-INF/services/" + face.getName());
@@ -397,7 +397,7 @@ public class Gamboo {
 	 *         or the jar file where this class was loaded from does not lie
 	 *         in {@link #classes} or the resulting ID is no integer.
 	 */
-	public static int resolve(final Class c) {
+	public static String resolve(final Class c) {
 		if (c == null)
 			throw new IllegalArgumentException();
 			
@@ -418,7 +418,7 @@ public class Gamboo {
 			throw new IllegalArgumentException();
 			
 		try {
-			return Integer.valueOf(id.substring(classes.getPath().length()));
+			return id.substring(classes.getPath().length());
 		}
 		catch (NumberFormatException e) {
 			throw new IllegalArgumentException(e);
