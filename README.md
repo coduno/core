@@ -8,6 +8,12 @@ Most of the work was done at the [Institute of Networked and Embedded Systems](h
 
 It is still in an experimental stage. The website wrapping a user interface around the bare core you see here, is at [coduno/app](https://github.com/coduno/app).
 
-## How to get it to run
+## Building
 
-I recently switched from Maven to Gradle, so well ... figure it out yourself.
+    gradle jar
+
+To generate `coduno.jar` with dependencies in it.
+
+    gradle javadoc
+
+To generate JavaDoc HTML in `doc`.

@@ -28,7 +28,7 @@ compileJava {
 }
 
 javadoc {
-	source = sourceSets.main.allJava
+	source = sourceSets.main.java
 	ext.appName = 'Coduno'
 	ext.developerEmail = 'lorenz.leutgeb@cod.uno'
 	project.configure(options) {
@@ -42,9 +42,12 @@ javadoc {
 		use = "true"
 		links('http://download.java.net/jdk8/docs/api/', 'http://jcommander.org/apidocs/')
 	}
+	destinationDir = file('doc')
 }
 
 jar {
+	archiveName = 'coduno.jar'
+	destinationDir = file('.')
 	manifest {
 		attributes('Main-Class': 'uno.cod.Coduno', 'Application-Name': '$appName')
 	}
