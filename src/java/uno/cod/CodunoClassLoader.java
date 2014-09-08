@@ -1,4 +1,4 @@
-package gamboo;
+package uno.cod;
 
 import java.io.InputStream;
 import java.io.IOException;
@@ -26,11 +26,11 @@ import java.security.Principal;
 /**
  * A {@link ClassLoader} that can be used to load multiple implementations of the same class.
  */
-public class GambooClassLoader extends URLClassLoader {
+public class CodunoClassLoader extends URLClassLoader {
 	private final ClassLoader parent;
 
 	/**
-	 * Initializes a new GambooClassLoader pointing at a specific jar file.
+	 * Initializes a new CodunoClassLoader pointing at a specific jar file.
 	 *
 	 * The structure of the jar file itself must project package
 	 * structure and class names:
@@ -43,7 +43,7 @@ public class GambooClassLoader extends URLClassLoader {
 	 *
 	 * @param url points this to the jar file, to load the classes from.
 	 */		
-	public GambooClassLoader(URL url, ClassLoader parent) {
+	public CodunoClassLoader(URL url, ClassLoader parent) {
 		super(new URL[] { url }, parent);
 				
 		if (!url.getProtocol().equals("jar"))
@@ -52,13 +52,13 @@ public class GambooClassLoader extends URLClassLoader {
 		this.parent = parent;
 	}
 	
-	public GambooClassLoader() {
+	public CodunoClassLoader() {
 		super(null, null);
 		
 		parent = null;
 	}
 	
-	public GambooClassLoader(URL url) {
+	public CodunoClassLoader(URL url) {
 		this(url, ClassLoader.getSystemClassLoader());
 	}
 

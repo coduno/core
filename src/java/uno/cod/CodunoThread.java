@@ -1,4 +1,4 @@
-package gamboo;
+package uno.cod;
 
 import java.lang.management.ManagementFactory;
 import static java.lang.Thread.State.*;
@@ -7,7 +7,7 @@ import static java.lang.Thread.State.*;
  * A simple Thread with some additional functionality to store a timeout and
  * check how much time is left during execution.
  */
-public class GambooThread extends Thread {
+public class CodunoThread extends Thread {
 	private final long timeout;
 	private long time = 0;
 	
@@ -35,42 +35,42 @@ public class GambooThread extends Thread {
 		return timeout;
 	}
 	
-	public GambooThread() {
+	public CodunoThread() {
 		super();
 		this.timeout = 0;
 	}
 	
-	public GambooThread(long timeout) {
+	public CodunoThread(long timeout) {
 		super();
 		this.timeout = timeout;
 	}
 	
-	public GambooThread(Runnable target, String name, long timeout) {
+	public CodunoThread(Runnable target, String name, long timeout) {
 		super(target, name);
 		this.timeout = timeout;
 	}
 	
-	public GambooThread(String name, long timeout) {
+	public CodunoThread(String name, long timeout) {
 		super(name);
 		this.timeout = timeout;
 	}
 	
-	public GambooThread(ThreadGroup group, Runnable target, long timeout) {
+	public CodunoThread(ThreadGroup group, Runnable target, long timeout) {
 		super(group, target);
 		this.timeout = timeout;
 	}
 	
-	public GambooThread(ThreadGroup group, Runnable target, String name, long timeout) {
+	public CodunoThread(ThreadGroup group, Runnable target, String name, long timeout) {
 		super(group, target, name);
 		this.timeout = timeout;
 	}
 	
-	public GambooThread(ThreadGroup group, Runnable target, String name, long stackSize, long timeout) {
+	public CodunoThread(ThreadGroup group, Runnable target, String name, long stackSize, long timeout) {
 		super(group, target, name, stackSize);
 		this.timeout = timeout;
 	}
 	
-	public GambooThread(ThreadGroup group, String name, long timeout) {
+	public CodunoThread(ThreadGroup group, String name, long timeout) {
 		super(group, name);
 		this.timeout = timeout;
 	}

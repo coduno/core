@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package gamboo.annotation;
+package uno.cod.annotation;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
@@ -61,7 +61,7 @@ import javax.tools.DiagnosticCollector;
 import javax.tools.StandardJavaFileManager;
 
 /**
- * Processes all classes annotated with {@link gamboo.annotation.Service} and
+ * Processes all classes annotated with {@link uno.cod.annotation.Service} and
  * generates corresponding files (<tt>META-INF/services/<i>...</i></tt>) at
  * compile time.
  * 

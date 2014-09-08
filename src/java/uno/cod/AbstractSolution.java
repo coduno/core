@@ -1,4 +1,4 @@
-package gamboo;
+package uno.cod;
 
 /**
  * Basic frame for real implementations of the Solution interface.
@@ -11,6 +11,6 @@ public abstract class AbstractSolution implements Solution {
 	 * Returns the time remaining to finish {@link #run()}.
 	 */
 	protected long getRemainingTime() {
-		return ((GambooThread)Thread.currentThread()).getRemainingTime();
+		return ((CodunoThread)Thread.currentThread()).getRemainingTime();
 	}
 }

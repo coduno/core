@@ -1,15 +1,15 @@
-package gamboo;
+package uno.cod;
 
 import java.util.List;
 import java.io.OutputStreamWriter;
 
 /**
  * Basic interface to implement game scenarios/simulations compatible with
- * {@link gamboo.Gamboo}.
+ * {@link uno.cod.Coduno}.
  */
 public interface Game<T extends Solution> {
 	/**
-	 * Read by {@link gamboo.Gamboo} to decide how many player IDs
+	 * Read by {@link uno.cod.Coduno} to decide how many player IDs
 	 * are needed to play this game.
 	 *
 	 * @return how many different implementations are needed to play this
@@ -18,7 +18,7 @@ public interface Game<T extends Solution> {
 	int getPlayerCount();
 	
 	/**
-	 * Read by {@link gamboo.Gamboo} to reward the winner of the game.
+	 * Read by {@link uno.cod.Coduno} to reward the winner of the game.
 	 *
 	 * @return the implemntation that won.
 	 */
@@ -42,7 +42,7 @@ public interface Game<T extends Solution> {
 	 *             the framework. You should read your random seed and other
 	 *             simulation parameters from there.
 	 * @param writer points to the logfile that was created for the current
-	 *               simulation. It is later processed by the Gamboo website
+	 *               simulation. It is later processed by the Coduno website
 	 *               to visualize the simulation.
 	 */
 	void run(List<String> args, OutputStreamWriter writer);

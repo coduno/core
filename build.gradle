@@ -7,6 +7,14 @@ repositories {
 	mavenCentral()
 }
 
+sourceSets {
+	main {
+		java {
+			srcDir 'src/java'
+		}
+	}
+}
+
 dependencies {
 	compile 'com.beust:jcommander:1.30+'
 	runtime 'com.beust:jcommander:1.30+'
@@ -18,15 +26,15 @@ compileJava {
 
 javadoc {
 	source = sourceSets.main.allJava
-	ext.appName = 'gamboo'
-	ext.developerEmail = 'lorenz.leutgeb@gmail.com'
+	ext.appName = 'Coduno'
+	ext.developerEmail = 'lorenz.leutgeb@cod.uno'
 	project.configure(options) {
 		memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
 		charSet = "UTF-8"
 		docTitle = "$appName"
 		windowTitle = "$appName"
-		header = 'Fork this project on <a href="https://github.com/flowlo/gamboo">GitHub</a>!'
-		bottom = 'Contact via <a href="https://github.com/flowlo/gamboo/issues">GitHub Issue Tracker</a> for feedback.'
+		header = 'Fork this project on <a href="https://github.com/coduno/core">GitHub</a>!'
+		bottom = 'Contact via <a href="https://github.com/coduno/core/issues">GitHub Issue Tracker</a> for feedback.'
 		author = "true"
 		use = "true"
 		links('http://download.java.net/jdk8/docs/api/', 'http://jcommander.org/apidocs/')
@@ -35,7 +43,7 @@ javadoc {
 
 jar {
 	manifest {
-		attributes('Main-Class': 'gamboo.Gamboo', 'Application-Name': '$appName')
+		attributes('Main-Class': 'uno.cod.Coduno', 'Application-Name': '$appName')
 	}
 	from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 }

@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package gamboo.annotation;
+package uno.cod.annotation;
 
 import java.lang.annotation.Documented;
 import static java.lang.annotation.ElementType.TYPE;
@@ -35,7 +35,7 @@ import static javax.lang.model.SourceVersion.RELEASE_7;
  * Indicates that this class should be listed in <tt>META-INF/services/<i>interface</i></tt>.
  *
  * @author Kohsuke Kawaguchi, Lorenz Leutgeb
- * @see gamboo.annotation.ServiceProcessor
+ * @see uno.cod.annotation.ServiceProcessor
  */
 @Retention(SOURCE)
 @Documented

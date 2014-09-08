@@ -1,4 +1,4 @@
-package gamboo;
+package uno.cod;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -16,13 +16,13 @@ import java.security.cert.X509Certificate;
 
 /**
  * A custom SecurityManager that watches implementations of
- * {@link gamboo.Gamboo#getInterface()}.
+ * {@link uno.cod.Coduno#getInterface()}.
  */
 @SuppressWarnings("unchecked") // Class.isAssignableFrom(Class<?>) calls are unchecked
-class GambooSecurityManager extends SecurityManager {
+class CodunoSecurityManager extends SecurityManager {
 	private final String path;
 
-	public GambooSecurityManager(String path) {
+	public CodunoSecurityManager(String path) {
 		this.path = path;
 	}
 
@@ -31,10 +31,10 @@ class GambooSecurityManager extends SecurityManager {
 		if (perm.getClass().equals(java.io.FilePermission.class)) {
 			Class[] context = getClassContext();
 		
-			// GambooClassLoader is run from evil classes, but it's trusted
+			// CodunoClassLoader is run from evil classes, but it's trusted
 			// (needed for dependency resolution)
 			for (int i = 1; i < context.length; i++)
-				if (context[i] == GambooClassLoader.class || context[i] == ClassLoader.class)
+				if (context[i] == CodunoClassLoader.class || context[i] == ClassLoader.class)
 					return;
 		}
 		checkOrigin(perm.toString());
@@ -204,7 +204,7 @@ class GambooSecurityManager extends SecurityManager {
 			if (context[i] == this.getClass() || context[i] == ClassLoader.class)
 				return;
 
-			if (Gamboo.getInterface().isAssignableFrom(context[i])) {
+			if (Coduno.getInterface().isAssignableFrom(context[i])) {
 				CodeSource cs = context[i].getProtectionDomain().getCodeSource();
 				System.out.print("SECURITY: " + type + " from source " + cs.getLocation());
 				
